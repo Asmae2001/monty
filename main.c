@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "monty.h"
+
 /**
  * main - main function
  * @argc: argument counts
