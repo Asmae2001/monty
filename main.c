@@ -14,6 +14,8 @@ int main(int argc, char **argv)
 	unsigned int linenum = 1;
 	stack_t *stk = NULL;
 
+	variables.check = 0;
+
 	if (argc != 2)
 	{
 		printf("USAGE: monty file\n");
@@ -66,7 +68,7 @@ void _tokenizer(char *string, stack_t **stk, unsigned int linenum)
 			free_stk(stk, linenum);
 			exit(EXIT_FAILURE);
 		}
-		holder = atoi(token);
+		variables.holder = atoi(token);
 		_ops(tokens, stk, linenum);
 	}
 	else
