@@ -111,5 +111,3 @@ void rotr(stack_t **stk, __attribute__((unused)) unsigned int linenum)
 int is_ascii(int ch)
 {
     return ch >= 0 && ch <= 127;
-}
-
