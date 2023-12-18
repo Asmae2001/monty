@@ -1,5 +1,6 @@
 #include "monty.h"
 #include <ctype.h>
+#include <stdio.h>
 
 
 /**
