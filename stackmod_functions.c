@@ -1,7 +1,10 @@
-#include <ctype.h>
 #include "monty.h"
 #include <stdio.h>
 
+// Declare a custom function to check if a character is ASCII
+int is_ascii(int ch);
+
+// ... rest of your code
 
 /**
  * pchar - function to print first char in the top of stack
@@ -11,18 +14,19 @@
  */
 void pchar(stack_t **stk, unsigned int linenum)
 {
-	if (stk == NULL || *stk == NULL)
-	{
-		printf("L%d: can't pchar, stack empty\n", linenum);
-		exit(EXIT_FAILURE);
-	}
-	if (isascii(variables.holder))
-		printf("%c\n", variables.holder);
-	else
-	{
-		printf("L%d: can't pchar, value out of range\n", linenum);
-		exit(EXIT_FAILURE);
-	}
+    if (stk == NULL || *stk == NULL)
+    {
+        printf("L%d: can't pchar, stack empty\n", linenum);
+        exit(EXIT_FAILURE);
+    }
+
+    if (is_ascii((unsigned char)variables.holder))
+        printf("%c\n", variables.holder);
+    else
+    {
+        printf("L%d: can't pchar, value out of range\n", linenum);
+        exit(EXIT_FAILURE);
+    }
 }
 
 /**
@@ -98,4 +102,10 @@ void rotr(stack_t **stk, __attribute__((unused))unsigned int linenum)
 	rev->prev = NULL;
 	(*stk)->prev = rev;
 	*stk = rev;
+}
+
+// Custom function to check if a character is ASCII
+int is_ascii(int ch)
+{
+    return ch >= 0 && ch <= 127;
 }
