@@ -1,4 +1,6 @@
 #include "monty.h"
+#include <stdio.h>
+#include <ctype.h> 
 
 /**
  * pchar - function to print first char in the top of stack
