@@ -1,7 +1,7 @@
 #include "monty.h"
 #include <stdio.h>
 
-// Declare a custom function to check if a character is ASCII
+/* Declare a custom function to check if a character is ASCII */
 int is_ascii(int ch);
 
 /**
@@ -111,3 +111,4 @@ void rotr(stack_t **stk, __attribute__((unused)) unsigned int linenum)
 int is_ascii(int ch)
 {
     return ch >= 0 && ch <= 127;
+}
